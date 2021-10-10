@@ -25,6 +25,7 @@ class ItemController extends Controller
             return redirect()->back()->with('error', $e->getMessage());
         }
         $item = $strategy->createItem($response);
+
         return redirect()->back()->with(array_key_first($item), end($item));
     }
 }
